@@ -141,6 +141,6 @@ function difference(a, b) {
 var avgChange = (totalChng/(totalMonths-1)).toFixed(2);
 
 console.log ("Average Change: " + avgChange);
-console.log ("Greatest Increase in Profits/Losses: " + mnthInc + " " + largestInc);
-console.log ("Greatest Decrease in Profits/Losses: " + mnthDec + " " + largestDec);
+console.log ("Greatest Increase in Profits/Losses: " + mnthInc + " ($" + largestInc + ")");
+console.log ("Greatest Decrease in Profits/Losses: " + mnthDec + " ($" + largestDec + ")");
 
