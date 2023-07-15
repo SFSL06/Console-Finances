@@ -119,7 +119,7 @@ var i = 0;
 function difference(a, b) {
   return Math.abs(a - b);
 }
- //Run the for loop to find the profit/loss each month and the largest increase and decrease across all months
+ //Run the for loop to find the profit/loss each month and the largest increase and decrease over consecutive months
  for (i = 1; i < finances.length; i++)
  {
   monthlyChg = (finances[i][1] - finances[i-1][1]);
