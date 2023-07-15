@@ -109,6 +109,7 @@ var i = 0;
  }
 
 console.log("Total: $" + sum);
+
 var avgChng = 0;
 var monthlyChg = 0;
 var totalChng = 0;
@@ -118,7 +119,7 @@ var i = 0;
 function difference(a, b) {
   return Math.abs(a - b);
 }
- //Run the for loop to find the profit/loss each month
+ //Run the for loop to find the profit/loss each month and the largest increase and decrease across all months
  for (i = 1; i < finances.length; i++)
  {
   monthlyChg = (finances[i][1] - finances[i-1][1]);
@@ -135,6 +136,8 @@ function difference(a, b) {
   totalChng = totalChng + monthlyChg;
 }
  
+//round off average change to 2 decimal places
+
 var avgChange = (totalChng/(totalMonths-1)).toFixed(2);
 
 console.log ("Average Change: " + avgChange);
