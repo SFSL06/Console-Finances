@@ -101,7 +101,7 @@ console.log ("Total Months: " + totalMonths);
 var sum = 0;
 var i = 0;
 
- //Run the for loop to add all the second items in array
+ //Run the for loop to add all the second items in array which represents profits/losses
  for (i = 0; i < finances.length; i++)
  {
   sum += finances[i][1];
@@ -110,16 +110,34 @@ var i = 0;
 
 console.log("Total: $" + sum);
 var avgChng = 0;
+var monthlyChg = 0;
 var totalChng = 0;
+var largestInc = 0;
+var largestDec = 0;
 var i = 0;
-
+function difference(a, b) {
+  return Math.abs(a - b);
+}
  //Run the for loop to find the profit/loss each month
  for (i = 1; i < finances.length; i++)
  {
-  totalChng += (finances[i][1] - finances[i-1][1]);
+  monthlyChg = (finances[i][1] - finances[i-1][1]);
+  if (largestInc >= 0 && largestInc < monthlyChg)
+   {
+    largestInc = monthlyChg;
+    var mnthInc = finances[i][0];
+  }
+  if (largestDec <= 0 && largestDec > monthlyChg)
+  {
+    largestDec = monthlyChg;
+    var mnthDec = finances[i][0];
+  }
+  totalChng = totalChng + monthlyChg;
 }
  
 var avgChange = (totalChng/(totalMonths-1)).toFixed(2);
 
 console.log ("Average Change: " + avgChange);
+console.log ("Greatest Increase in Profits/Losses: " + mnthInc + " " + largestInc);
+console.log ("Greatest Decrease in Profits/Losses: " + mnthDec + " " + largestDec);
 
